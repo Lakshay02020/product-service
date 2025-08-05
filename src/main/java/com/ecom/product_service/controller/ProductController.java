@@ -37,7 +37,7 @@ public class ProductController {
     // 2. Add Product
     @PostMapping
     public ResponseEntity<Product> addProduct(@RequestBody ProductDto productDto) {
-        log.info("Adding new product: {}", productDto);
+        log.info("Adding new product: {-}", productDto);
         Product created = productService.addProduct(productDto);
         log.debug("Created product: {}", created);
         return ResponseEntity.ok(created);

@@ -61,7 +61,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> getAllProducts(int page, int size) {
-        log.info("Fetching all products - page: {}, size: {}", page, size);
+        log.info("Fetching all products in service layer- page: {}, size: {}", page, size);
 
         Pageable pageable = PageRequest.of(page, size);
         Page<Product> products = productRepository.findAll(pageable);
