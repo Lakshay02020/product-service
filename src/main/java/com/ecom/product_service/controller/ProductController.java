@@ -6,8 +6,6 @@ import com.ecom.product_service.service.ProductService;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +19,12 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    // Wake up login service
+    @GetMapping("/ping")
+    public void ping(){
+        log.info("Ping received");
+    }
 
     // 1. Get by Product ID
     @GetMapping("/{id}")
